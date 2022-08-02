@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La oficina</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div id="UI">
+        <h1>La oficina</h1>
+    </div>
+
+    <div style="position: relative;">
+        <a-scene  light="defaultLightsEnabled: false" antialias="true">
+            <a-sky color="#95daf5"></a-sky>
+    
+            <a-entity light="type: ambient; color: #CCC; intensity:3"></a-entity>
+    
+            <a-assets>
+              <a-asset-item
+                id="oficina"
+                src="assets/models/oficina.gltf"
+              >
+              </a-asset-item>
+            </a-assets>
+    
+            <a-text
+            value="el lugar de Isaias"
+            scale = "1 1 1"
+            position = "-2.9 1.6 -1"
+            rotation = "0 0 0"
+            color="#000"
+            >
+            </a-text>
+    
+            <a-text
+            value="Mi lugar"
+            scale = "1 1 1"
+            position = "2.3 1.6 0"
+            rotation = "0 -90 0"
+            color="#000"
+            >
+            </a-text>
+      
+            <a-entity>
+              <a-gltf-model
+                shadow="receive: true"
+                gltf-model="#oficina"
+                scale="5 5 5"
+                position="0 0 0"
+              >
+              </a-gltf-model>
+            </a-entity>
+      
+            <a-entity id="rig" position="-6 1.6 4" rotation="0 -45 0">
+              <a-entity id="camera" camera look-controls wasd-controls="acceleration:50"></a-entity>
+            </a-entity> 
+          </a-scene>
+    </div>
+    
+
+      <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</body>
+</html>
