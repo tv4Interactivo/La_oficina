@@ -6,10 +6,40 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.UI{
+    text-shadow: -3px 3px 5px rgb(66, 87, 142);
+}
+
 h1{
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 40px;
     z-index: 1;
-    font-size: 6rem;
+    font-size: 4rem;
+}
+
+p{
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+
+.logo{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    z-index: 1;
+    width:5%;
+}
+
+@media screen and (min-width:320px) and (max-width: 500px) {
+    h1{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width:500px) and (max-width: 840px) {
+
 }

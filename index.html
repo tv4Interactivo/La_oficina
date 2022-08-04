@@ -1,82 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La oficina</title>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <!-- <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script> -->
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v4.2.0/dist/aframe-extras.min.js"></script>
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/styles.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-    <div id="UI">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+
+      <div class="UI" style="display: none;">
         <h1>La oficina</h1>
-    </div>
+        <p>Ejemplo básico de <br> fotogrametría</p>
+        <img class="logo" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
+      </div>
 
-    <div style="position: relative;">
-        <a-scene  light="defaultLightsEnabled: false" antialias="true">
-            <a-sky color="#95daf5"></a-sky>
-    
-            <a-entity light="type: ambient; color: #CCC; intensity:3"></a-entity>
-    
-            <a-assets>
-              <a-asset-item
-                id="oficina"
-                src="assets/models/oficina.gltf"
-              >
-              </a-asset-item>
-            </a-assets>
-    
-            <a-text
-            value="el lugar de Isaias"
-            scale = "1 1 1"
-            position = "-2.9 1.6 -1"
-            rotation = "0 0 0"
-            color="#000"
-            >
-            </a-text>
-    
-            <a-text
-            value="Mi lugar"
-            scale = "1 1 1"
-            position = "2.3 1.6 0"
-            rotation = "0 -90 0"
-            color="#000"
-            >
-            </a-text>
-      
-            <a-entity>
-              <a-gltf-model
-                shadow="receive: true"
-                gltf-model="#oficina"
-                scale="5 5 5"
-                position="0 0 0"
-              >
-              </a-gltf-model>
+      <a-scene
+        inspector-plugin-recast 
+        vr-mode-ui="enabled: false"
+        light="defaultLightsEnabled: false"
+        antialias="true"
+      >
+        <a-sky color="#95daf5"></a-sky>
+
+        <a-entity light="type: ambient; color: #CCC; intensity:3"></a-entity>
+
+        <a-assets>
+          <a-asset-item id="oficina" src="assets/models/oficina.gltf">
+          </a-asset-item>
+        </a-assets>
+
+        <a-assets>
+          <a-asset-item id="navmesh" src="assets/models/oficina_navmesh.glb">
+          </a-asset-item>
+        </a-assets>
+
+        <a-text
+          id="text1"
+          value="el lugar de Isaias"
+          scale="1 1 1"
+          position="-1.85 2 -0.5"
+          rotation="0 0 0"
+          color="#000"
+          visible="false"
+        >
+        </a-text>
+
+        <a-box
+        id="box1"
+        color="blue"
+        opacity="0.5"
+        scale="0.2 0.2 0.2"
+        position="-1 1.8 -0.6"
+        event-set__down="_event: mousedown; _target: #text1; visible: true"
+        event-set__up="_event: mouseup; _target: #text1; visible: false">
+        <a-animation property="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+        </a-box>
+
+        <a-text
+          id="text2"
+          value="Mi lugar"
+          scale="1 1 1"
+          position="1.2 2 -0.063"
+          rotation="0 -90 0"
+          color="#000"
+          visible="false"
+        >
+        </a-text>
+
+        <a-box
+        id="box2"
+        color="blue"
+        opacity="0.5"
+        scale="0.2 0.2 0.2"
+        position="1.2 1.8 0.3"
+        event-set__down="_event: mousedown; _target: #text2; visible: true"
+        event-set__up="_event: mouseup; _target: #text2; visible: false">
+        <a-animation property="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+        </a-box>
+
+        <a-entity id="rig" 
+                  movement-controls="controls: keyboard,touch; speed:0.2; constrainToNavMesh: true" 
+                  position="0 0 3">
+          <a-entity
+            id="camera"
+            camera
+            position="0 2.1 0"
+            look-controls="pointerLockEnabled: true"
+          >
+              <a-entity cursor
+              position="0 0 -0.6"
+              geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.008"
+              material="color: white; shader: flat">
             </a-entity>
-      
-            <a-entity id="rig" position="-6 1.6 4" rotation="0 -45 0">
-              <a-entity id="camera" camera look-controls wasd-controls="acceleration:50"></a-entity>
-            </a-entity> 
-          </a-scene>
-    </div>
+          </a-entity>
+        </a-entity>
+
+        <a-entity id="walkMesh" 
+        class="navmesh" 
+        gltf-model="#navmesh"
+        position="-0.09 1 0.125"
+        scale="3 3 3"
+        nav-mesh visible="false"></a-entity>
+
+
+        <a-entity id="model"
+        gltf-model="#oficina"
+        scale="3 3 3"
+        position="0 1 0">
+        </a-entity>
+
+        
+
+        
+        
+      </a-scene>
     
 
-      <!-- Import the webpage's javascript file -->
+    <!-- Import the webpage's javascript file -->
     <script src="/script.js" defer></script>
-</body>
+
+  </body>
 </html>
