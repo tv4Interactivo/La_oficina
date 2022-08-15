@@ -8,6 +8,8 @@
 
 .UI{
     text-shadow: -3px 3px 5px rgb(66, 87, 142);
+    width: 50%;
+    height: auto;
 }
 
 h1{
