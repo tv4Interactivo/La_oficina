@@ -57,12 +57,38 @@
   </head>
   <body>
 
-      <div class="UI" style="display: none;">
+      <div class="UI">
         <h1>La oficina</h1>
         <p>Ejemplo básico de <br> fotogrametría</p>
         <img class="logo" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
       </div>
 
+      <div class="menu" style="position:absolute; top:2%; right:2%; z-index:1;">
+        <div class="dropdown">
+          <button onclick="toggleDisplay()" id="dropbtn" class="dropbtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div
+            id="dropdown-content"
+            class="dropdown-content animate__animated animate__fadeIn"
+            style="display: none"
+          >
+          <a href="https://tv4interactivo.github.io/4interactivo/">
+            <button>
+              <i class="home fa-solid fa-house"></i>
+            </button>
+          </a>
+            <button onclick="copyURL()" href="#">
+              <i class="share fa-solid fa-share-nodes"></i>
+            </button>
+            <button onclick="changeLang()" href="#">
+              <i class="lang fa-solid fa-language"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      
       <a-scene
         inspector-plugin-recast 
         vr-mode-ui="enabled: false"
@@ -100,8 +126,8 @@
         opacity="0.5"
         scale="0.2 0.2 0.2"
         position="-1 1.8 -0.6"
-        event-set__down="_event: mousedown; _target: #text1; visible: true"
-        event-set__up="_event: mouseup; _target: #text1; visible: false">
+        event-set__enter="_event: mouseenter; _target: #text1; visible: true"
+        event-set__leave="_event: mouseleave; _target: #text1; visible: false">
         <a-animation property="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
         </a-box>
 
@@ -122,8 +148,8 @@
         opacity="0.5"
         scale="0.2 0.2 0.2"
         position="1.2 1.8 0.3"
-        event-set__down="_event: mousedown; _target: #text2; visible: true"
-        event-set__up="_event: mouseup; _target: #text2; visible: false">
+        event-set__enter="_event: mouseenter; _target: #text2; visible: true"
+        event-set__leave="_event: mouseleave; _target: #text2; visible: false">
         <a-animation property="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
         </a-box>
 
@@ -166,7 +192,7 @@
     
 
     <!-- Import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js"></script>
 
   </body>
 </html>
