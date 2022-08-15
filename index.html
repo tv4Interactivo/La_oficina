@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v4.2.0/dist/aframe-extras.min.js"></script>
 
+    
+
     <!-- Fontawesome -->
     <link
       rel="stylesheet"
@@ -20,7 +22,7 @@
     />
 
     <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,40 +58,9 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-
-      <div class="UI">
-        <h1>La oficina</h1>
-        <p>Ejemplo básico de <br> fotogrametría</p>
-        <img class="logo" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
-      </div>
-
-      <div class="menu" style="position:absolute; top:2%; right:2%; z-index:1;">
-        <div class="dropdown">
-          <button onclick="toggleDisplay()" id="dropbtn" class="dropbtn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <div
-            id="dropdown-content"
-            class="dropdown-content animate__animated animate__fadeIn"
-            style="display: none"
-          >
-          <a href="https://tv4interactivo.github.io/4interactivo/">
-            <button>
-              <i class="home fa-solid fa-house"></i>
-            </button>
-          </a>
-            <button onclick="copyURL()" href="#">
-              <i class="share fa-solid fa-share-nodes"></i>
-            </button>
-            <button onclick="changeLang()" href="#">
-              <i class="lang fa-solid fa-language"></i>
-            </button>
-          </div>
-        </div>
-      </div>
       
-      
-      <a-scene
+      <div style="position: relative;">
+        <a-scene
         inspector-plugin-recast 
         vr-mode-ui="enabled: false"
         light="defaultLightsEnabled: false"
@@ -183,16 +154,46 @@
         scale="3 3 3"
         position="0 1 0">
         </a-entity>
-
-        
-
-        
-        
       </a-scene>
+      </div>
+      
     
+      <div class="UI" style="position:absolute; top:2%; left:2%; z-index:1;">
+        <h1>La oficina</h1>
+        <p>Ejemplo básico de <br> fotogrametría</p>
+      </div>
 
-    <!-- Import the webpage's javascript file -->
-    <script src="script.js"></script>
+      <div class="logo" >
+        <img class="logo2" style="position:absolute; bottom:2%; right:2%; z-index:1; width: 5%;" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
+      </div>
 
+      <div class="menu" style="position:absolute; top:2%; right:2%; z-index:1;">
+        <div class="dropdown">
+          <button onclick="toggleDisplay()" id="dropbtn" class="dropbtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div
+            id="dropdown-content"
+            class="dropdown-content animate__animated animate__fadeIn"
+            style="display: none"
+          >
+          <a href="https://tv4interactivo.github.io/4interactivo/">
+            <button>
+              <i class="home fa-solid fa-house"></i>
+            </button>
+          </a>
+            <button onclick="copyURL();" href="#">
+              <i class="share fa-solid fa-share-nodes"></i>
+            </button>
+            <button onclick="changeLang();" href="#">
+              <i class="lang fa-solid fa-language"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Import the webpage's javascript file -->
+        <script src="script.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
