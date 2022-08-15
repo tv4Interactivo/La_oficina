@@ -29,20 +29,22 @@ function copyURL() {
 function changeLang() {
   const esp = document.getElementById("text-esp");
   const eng = document.getElementById("text-eng");
-  const esp2 = document.getElementById("text-esp2");
-  const eng2 = document.getElementById("text-eng2");
-  const esp3 = document.getElementById("text-esp3");
-  const eng3 = document.getElementById("text-eng3");
 
-  if (esp.style.display === "flex") {
+  if (esp.style.display === "block") {
     esp.style.display = "none";
-    eng.style.display = "flex";
+    eng.style.display = "block";
   } else {
-    esp.style.display = "flex";
+    esp.style.display = "block";
     eng.style.display = "none";
   }
 
- 
-
   toggle.style.display = "none";
+}
+
+//walk
+function walkFwd(){
+  var step = 0.0;
+  const walkForward = document.getElementById("rig");
+  const fwd = walkForward.setAttribute(step);
+  
 }

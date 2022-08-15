@@ -125,8 +125,10 @@
         </a-box>
 
         <a-entity id="rig" 
-                  movement-controls="controls: keyboard,touch; speed:0.2; constrainToNavMesh: true" 
-                  position="0 0 3">
+                  movement-controls="controls: checkpoint;" 
+                  checkpoint-controls="mode: animate"
+                  position="0 0 3"
+                  rotation="0 0 0">
           <a-entity
             id="camera"
             camera
@@ -134,7 +136,7 @@
             look-controls="pointerLockEnabled: true"
           >
               <a-entity cursor
-              position="0 0 -0.6"
+              position="0 0 -0.8"
               geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.008"
               material="color: white; shader: flat">
             </a-entity>
@@ -154,17 +156,26 @@
         scale="3 3 3"
         position="0 1 0">
         </a-entity>
+
+        <a-cylinder checkpoint radius="0.5" height="0.1" position="0 0 2.3" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="0.5" height="0.1" position="-2.5 0 1.4" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="0.5" height="0.1" position="-0.3 0 0" color="#39BB82"></a-cylinder>
       </a-scene>
       </div>
       
     
-      <div class="UI" style="position:absolute; top:2%; left:2%; z-index:1;">
+      <div class="UI" id="text-esp" style="position:absolute; top:2%; left:2%; z-index:1; display: block;">
         <h1>La oficina</h1>
         <p>Ejemplo básico de <br> fotogrametría</p>
       </div>
 
+      <div class="UI" id="text-eng" style="position:absolute; top:2%; left:2%; z-index:1; display:none">
+        <h1>The office</h1>
+        <p>Basic photogrammetry <br> example</p>
+      </div>
+
       <div class="logo" >
-        <img class="logo2" style="position:absolute; bottom:2%; right:2%; z-index:1; width: 5%;" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
+        <img class="logo2" src="assets/images/logo_4i_vertical.png" alt="tv4 logo">
       </div>
 
       <div class="menu" style="position:absolute; top:2%; right:2%; z-index:1;">
@@ -192,6 +203,7 @@
         </div>
       </div>
     
+
       <!-- Import the webpage's javascript file -->
         <script src="script.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
