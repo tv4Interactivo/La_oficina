@@ -95,7 +95,7 @@
         id="box1"
         color="blue"
         opacity="0.5"
-        scale="0.2 0.2 0.2"
+        scale="0.1 0.1 0.1"
         position="-1 1.8 -0.6"
         event-set__enter="_event: mouseenter; _target: #text1; visible: true"
         event-set__leave="_event: mouseleave; _target: #text1; visible: false">
@@ -117,8 +117,8 @@
         id="box2"
         color="blue"
         opacity="0.5"
-        scale="0.2 0.2 0.2"
-        position="1.2 1.8 0.3"
+        scale="0.1 0.1 0.1"
+        position="1 1.8 0.3"
         event-set__enter="_event: mouseenter; _target: #text2; visible: true"
         event-set__leave="_event: mouseleave; _target: #text2; visible: false">
         <a-animation property="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
@@ -135,7 +135,7 @@
             position="0 2.1 0"
             look-controls="pointerLockEnabled: true"
           >
-              <a-entity cursor
+              <a-entity cursor="fuse: false"
               position="0 0 -1"
               geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.008"
               material="color: white; shader: flat">
@@ -157,9 +157,9 @@
         position="0 1 0">
         </a-entity>
 
-        <a-cylinder checkpoint radius="0.5" height="0.05" position="0 0 2.3" color="#39BB82"></a-cylinder>
-        <a-cylinder checkpoint radius="0.5" height="0.05" position="-2 0 1.4" color="#39BB82"></a-cylinder>
-        <a-cylinder checkpoint radius="0.5" height="0.05" position="-0.3 0 0.3" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="0.3" height="0.05" position="0 0 2.3" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="0.3" height="0.05" position="-2.5 0 0.5" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="0.3" height="0.05" position="-0.3 0 0.5" color="#39BB82"></a-cylinder>
       </a-scene>
       </div>
       
